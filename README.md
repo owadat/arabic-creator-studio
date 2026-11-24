@@ -1,4 +1,4 @@
-# Arabic Creator Studio v2.0 | استوديو صناعة المحتوى العربي
+# Arabic Creator Studio v2.1 | استوديو صناعة المحتوى العربي
 
 Free, Arabic-first, browser-based video production toolkit. No account, API key, server or external JavaScript dependency.
 
@@ -12,6 +12,11 @@ Free, Arabic-first, browser-based video production toolkit. No account, API key,
 
 ## Run | التشغيل
 Open `index.html` or deploy the contents of this directory to GitHub Pages (main branch, root). Use a recent Chrome/Edge or compatible browser; media APIs and formats vary by OS and browser. Keep the tab visible while rendering in real time. Exported subtitles are estimated, not audio transcription. Adjust scene durations to match your recording. The exported video may need conversion to MP4 for some social platforms.
+
+## Installable app (v2.1) | تثبيت التطبيق
+- Deploy all files at the same path on GitHub Pages over HTTPS. Open the site in Chrome on Android or Edge/Chrome on Windows, then select **تثبيت التطبيق** or use the browser installation menu.
+- The service worker caches only the local application shell. After the initial online visit and successful cache setup, the app can run offline. Browser voices may still require internet, and media capabilities vary by device. Uploaded images/audio are not saved offline across reloads; export JSON and keep the original media.
+- This is an installable PWA, not a separately packaged APK or EXE. Updates arrive through the service worker when the site is online; reopen the app after an update is installed.
 
 ## Privacy and storage
 Project text is saved locally, with the same storage key as v1. JSON contains text/settings, not uploaded media. Reattach images/audio after reloading. Files are processed locally in the browser; system text-to-speech may use an online service depending on the selected voice and device. The hosting provider may process ordinary access logs. Use only images and audio you have rights to use.
