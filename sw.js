@@ -1,6 +1,6 @@
 const PREFIX = 'arabic-creator-studio-shell-';
-const CACHE = PREFIX + 'v2.1.0';
-const SHELL = ['./','./index.html','./style.css','./core.js','./app.js','./video.js','./install.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const CACHE = PREFIX + 'v3.0.0';
+const SHELL = ['./','./index.html','./style.css','./core.js','./app.js','./video.js','./media-store.js','./ai.js','./install.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 const URLS = new Set(SHELL.map(path => new URL(path, self.registration.scope).href));
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL.map(path => new Request(path, {cache: 'reload'})))));

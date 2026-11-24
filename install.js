@@ -20,8 +20,8 @@
       status.textContent = result.outcome === 'accepted' ? 'تم قبول طلب التثبيت.' : 'يمكنك تثبيت التطبيق لاحقًا من قائمة المتصفح.';
     } catch { status.textContent = 'استخدم خيار التثبيت من قائمة المتصفح.'; }
   });
-  if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
-    navigator.serviceWorker.register('./sw.js').then(() => navigator.serviceWorker.ready).then(() => {
+  if ('serviceWorker' in navigator && (location.protocol === 'https:' || ['localhost','127.0.0.1'].includes(location.hostname))) {
+    navigator.serviceWorker.register('./sw.js').then(reg => {reg.update().catch(()=>{});if(reg.waiting)status.textContent='تحديث جاهز؛ أغلق نوافذ التطبيق وافتحه مجددًا.';return navigator.serviceWorker.ready;}).then(() => {
       if (!standalone()) status.textContent = 'التطبيق جاهز للعمل دون اتصال. ثبّته من هذا الزر أو قائمة المتصفح.';
     }).catch(() => { status.textContent = 'تعذّر إعداد العمل دون اتصال؛ يمكنك استخدام التطبيق عبر الإنترنت.'; });
   }
